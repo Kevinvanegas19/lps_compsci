@@ -24,8 +24,14 @@ print("Your name is " + name + ", your strength is " + str(strength) + ", your h
 
 print(name + ", You've come to a fork in the road. Do you want to go right or left?")
 direction = raw_input()
-if direction == "right":
-	print("Wrong, dead")
-else:
-	print("Good choice dude")
-
+if direction == "right" and strength < 6: 
+	print("Unfortunately,you chose a path where you weren't strong enough to fight a giant. The giant grabbed you and ripped your head off your body. Therefore, you lost the game!" )
+if direction == "left": 
+	print("Lucky you. You chose a path where you find a pot of gold. You win!")
+if direction == "right" and strength >= 6:
+	print("You came across a giant before reaching a hill. Fortunately, you were strong enough to defeat him. You continue walking through the hill but suddenly you come across another life or death choice. Right or left?")
+	direction = raw_input()
+	if direction == "right":
+		print("You found Jesus Christ on top of the hill! Congratulations, You win!")
+	if direction != "right":
+		print("What a journey you've had but unfortunately, you fall off a cliff. You fall head first so your head explodes. This means you lost the game! Thanks for playing!")
